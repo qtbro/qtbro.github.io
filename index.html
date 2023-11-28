@@ -1,89 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="css/tailwind.css" rel="stylesheet">
-      <meta name="theme-color" content="#3F51B5">
-      <!-- Use the desired shade of purple (e.g., #8a4fff) -->
-      <link rel="stylesheet" href="css/transcript.css">
-      <link rel="stylesheet" href="css/styles.css">
-      <style>
-         body, html {
-         overflow: hidden;
-         }
-      </style>
-      <title>DEVELOPMENT OF CBT CBT TEST 2023</title>
-      <link rel="icon" type="image/x-icon" href="https://11.sman17kabtangerang.sch.id/wp-content/uploads/2023/11/cropped-0vf8i0mu_400x400-1-1-192x192.jpeg">
-   </head>
-   <body class="bg-gray-800">
-      <div class="w-full min-h-screen flex items-center justify-center">
-         <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md text-center relative">
-            <div id="fullScreenToggle" class="cursor-pointer absolute top-4 left-4 text-2xl text-gray-600">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/tailwind.css" rel="stylesheet">
+    <meta name="theme-color" content="#3F51B5">
+    <link rel="stylesheet" href="css/transcript.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>DEVELOPMENT OF CBT CBT TEST 2023</title>
+    <link rel="icon" type="image/x-icon"
+        href="img/17.webp">
+    <style>
+        @media screen and (max-width: 600px) {
+            body {
+                orientation: portrait;
+                transform: rotate(0deg);
+            }
+        }
+        </style>
+</head>
+
+<body class="bg-gradient-to-br from-blue-800 to-gray-900 text-white min-h-screen flex items-center justify-center">
+    <div class="w-full max-w-md mx-auto p-6 rounded-lg shadow-lg text-center relative">
+        <div id="fullScreenToggle" class="cursor-pointer absolute top-4 left-4 text-2xl text-gray-300">
+            <i class="gg-fullscreen"></i>
+        </div>
+        <div class="mb-4">
+            <img src="img/17.webp"
+                alt="Icon" class=" w-20 h-20 mx-auto">
+        </div>
+        <h1 class="text-3xl font-bold font-sans">Exam</h1>
+        <form id="askurl" class="mt-4">
+            <label for="url" class="block text-lg font-semibold mb-2">Insert Exam Url</label>
+            <div class="relative flex items-stretch">
+               <input type="text" id="url" class="flex-1 p-3 border rounded-l bg-gray-700 focus:outline-none focus:shadow-outline-blue" placeholder="URL CBT">
+               <button type="button" id="submit" class="bg-blue-500 text-white px-6 py-3 rounded-r hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800 transition duration-300 ease-in-out">
+                  Run
+               </button>
             </div>
-            <div class="circle-image mb-4">
-               <img src="https://11.sman17kabtangerang.sch.id/wp-content/uploads/2023/11/cropped-0vf8i0mu_400x400-1-1-192x192.jpeg" alt="Icon">
-            </div>
-            <h1 class="text-3xl font-bold font-sans">Exam</h1>
-            <form id="askurl" class="flex flex-col relative">
-               <label for="url" class="mb-2 text-lg font-semibold">Insert Exam Url</label>
-               <input type="text" id="url" placeholder="URL CBT" class="w-full p-2 border rounded">
-               <button type="button" id="submit" class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue active:bg-blue-800">Run</button>
-            </form>
-            <div id="content" class="mt-4"></div>
-         </div>
-         <!-- Tambahkan elemen baru untuk ikon di pojok kiri bawah -->
-         <div id="bottomLeftIcon" class="cursor-pointer absolute bottom-4 left-4 text-2xl text-gray-600">
-            <i class="gg-transcript"></i>
-         </div>
-      </div>
-      <script src="js/sweetalert.js"></script>
-      <script src="js/index.js"></script>
-      <script>
-         // JavaScript code to handle full screen toggle
-         const toggleFullScreen = document.getElementById('fullScreenToggle');
-         const bottomLeftIcon = document.getElementById('bottomLeftIcon');
-         
-         toggleFullScreen.addEventListener('click', () => {
-             if (document.fullscreenElement) {
-                 exitFullScreen();
-             } else {
-                 enterFullScreen();
-             }
-         });
-         
-         bottomLeftIcon.addEventListener('click', () => {
-             if (document.fullscreenElement) {
-                 exitFullScreen();
-             } else {
-                 enterFullScreen();
-             }
-         });
-         
-         function enterFullScreen() {
-             const element = document.documentElement;
-             if (element.requestFullscreen) {
-                 element.requestFullscreen();
-             } else if (element.mozRequestFullScreen) {
-                 element.mozRequestFullScreen();
-             } else if (element.webkitRequestFullscreen) {
-                 element.webkitRequestFullscreen();
-             } else if (element.msRequestFullscreen) {
-                 element.msRequestFullscreen();
-             }
-         }
-         
-         function exitFullScreen() {
-             if (document.exitFullscreen) {
-                 document.exitFullscreen();
-             } else if (document.mozCancelFullScreen) {
-                 document.mozCancelFullScreen();
-             } else if (document.webkitExitFullscreen) {
-                 document.webkitExitFullscreen();
-             } else if (document.msExitFullscreen) {
-                 document.msExitFullscreen();
-             }
-         }
-      </script>
-   </body>
+         </form>
+        <div id="content" class="mt-8"></div>
+    </div>
+    <!-- Add a new element for the icon in the bottom left corner -->
+    <div id="bottomLeftIcon"
+        class="cursor-pointer absolute bottom-4 left-4 text-2xl text-gray-300 hover:text-gray-400">
+        <i class="gg-transcript"></i>
+    </div>
+
+    <script src="js/sweetalert.js"></script>
+    <script src="js/index.js"></script>
+    <script>
+        // JavaScript code to handle full screen toggle
+        const toggleFullScreen = document.getElementById('fullScreenToggle');
+        const bottomLeftIcon = document.getElementById('bottomLeftIcon');
+
+        toggleFullScreen.addEventListener('click', () => {
+            if (document.fullscreenElement) {
+                exitFullScreen();
+            } else {
+                enterFullScreen();
+            }
+        });
+
+        bottomLeftIcon.addEventListener('click', () => {
+            if (document.fullscreenElement) {
+                exitFullScreen();
+            } else {
+                enterFullScreen();
+            }
+        });
+
+        function enterFullScreen() {
+            const element = document.documentElement;
+            if (element.requestFullscreen) {
+                element.requestFullscreen();
+            } else if (element.mozRequestFullScreen) {
+                element.mozRequestFullScreen();
+            } else if (element.webkitRequestFullscreen) {
+                element.webkitRequestFullscreen();
+            } else if (element.msRequestFullscreen) {
+                element.msRequestFullscreen();
+            }
+        }
+
+        function exitFullScreen() {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.mozCancelFullScreen) {
+                document.mozCancelFullScreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+        }
+    </script>
+</body>
+
 </html>
