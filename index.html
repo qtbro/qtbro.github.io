@@ -3,18 +3,18 @@
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+      <link href="css/tailwind.css" rel="stylesheet">
       <meta name="theme-color" content="#3F51B5">
       <!-- Use the desired shade of purple (e.g., #8a4fff) -->
-      <link rel="stylesheet" href="https://unpkg.com/css.gg@2.0.0/icons/css/transcript.css">
+      <link rel="stylesheet" href="css/transcript.css">
       <link rel="stylesheet" href="css/styles.css">
       <style>
          body, html {
          overflow: hidden;
          }
       </style>
-      <title>Exam Bypass</title>
-      <link rel="icon" type="image/x-icon" href="img/icon.jpg">
+      <title>DEVELOPMENT OF CBT CBT TEST 2023</title>
+      <link rel="icon" type="image/x-icon" href="https://11.sman17kabtangerang.sch.id/wp-content/uploads/2023/11/cropped-0vf8i0mu_400x400-1-1-192x192.jpeg">
    </head>
    <body class="bg-gray-800">
       <div class="w-full min-h-screen flex items-center justify-center">
@@ -22,9 +22,9 @@
             <div id="fullScreenToggle" class="cursor-pointer absolute top-4 left-4 text-2xl text-gray-600">
             </div>
             <div class="circle-image mb-4">
-               <img src="img/icon.jpg" alt="Icon">
+               <img src="https://11.sman17kabtangerang.sch.id/wp-content/uploads/2023/11/cropped-0vf8i0mu_400x400-1-1-192x192.jpeg" alt="Icon">
             </div>
-            <h1 class="text-3xl font-bold font-sans">Exam Bypass</h1>
+            <h1 class="text-3xl font-bold font-sans">Exam</h1>
             <form id="askurl" class="flex flex-col relative">
                <label for="url" class="mb-2 text-lg font-semibold">Insert Exam Url</label>
                <input type="text" id="url" placeholder="URL CBT" class="w-full p-2 border rounded">
@@ -37,49 +37,8 @@
             <i class="gg-transcript"></i>
          </div>
       </div>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script src="js/sweetalert.js"></script>
       <script src="js/index.js"></script>
-      <script>
-let timerInterval;
-let textIndex = 0;
-const texts = ["Loading", "Injecting", "Finish"];
-
-// Check if the flag is present in localStorage
-const userAlreadyViewed = localStorage.getItem("ifuseralreadyview");
-
-// If the flag is not present, show the Swal alert
-if (!userAlreadyViewed) {
-  Swal.fire({
-    title: "PLS WAIT",
-    html: "<b></b>",
-    imageUrl: "img/hutao.jpg",
-    imageHeight: 250,
-    color: "#FFFF",
-    background: "#1F2937",
-    timer: 5500,
-    timerProgressBar: true,
-    didOpen: () => {
-      Swal.showLoading();
-      const timer = Swal.getPopup().querySelector("b");
-
-      timerInterval = setInterval(() => {
-        timer.textContent = `${Swal.getTimerLeft()}`;
-        Swal.getPopup().querySelector('b').textContent = texts[textIndex];
-        textIndex = (textIndex + 1) % texts.length;
-      }, 1500);
-    },
-    willClose: () => {
-      clearInterval(timerInterval);
-      // Set the flag in localStorage to indicate the user has viewed the alert
-      localStorage.setItem("ifuseralreadyview", "true");
-    }
-  }).then((result) => {
-    if (result.dismiss === Swal.DismissReason.timer) {
-      console.log("I was closed by the timer");
-    }
-  });
-}
-      </script>
       <script>
          // JavaScript code to handle full screen toggle
          const toggleFullScreen = document.getElementById('fullScreenToggle');
